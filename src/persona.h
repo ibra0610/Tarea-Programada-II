@@ -15,7 +15,7 @@ class Persona{
 
     public: 
     Persona(int, std::string, std::string, std::string, int, int); 
-    virtual std::string obtenerDatos();
+    virtual void obtenerDatos();
 
 }; 
 

@@ -1,6 +1,6 @@
 #include "persona.h" 
 #include <string> 
-
+#include <iostream>
 
 Persona::Persona(int _id_empleado, std::string _nombre, std::string _apellido, std::string _email, int _tipo_empleado, int _id_supervisor){
     this-> id_empleado = _id_empleado; 
@@ -11,7 +11,8 @@ Persona::Persona(int _id_empleado, std::string _nombre, std::string _apellido, s
     this-> id_supervisor = _id_supervisor; 
 }
 
-//std::string Persona::obtenerDatos(){
-  //  return "ID de empleado: " + id_empleado + " Nombre: " + nombre + " Apellido: " + apellido + " Email: " + email + " Tipo de empleado: " + 
-  // tipo_empleado + " ID supervisor: " + id_supervisor; 
-//}
+ void Persona::obtenerDatos(){ 
+    std::cout << "ID de empleado: " << id_empleado << " Nombre: " << nombre << " Apellido: " << apellido << 
+    " Email: " << email << " Tipo de empleado: " << tipo_empleado << " ID supervisor: " << id_supervisor;   
+    
+}
