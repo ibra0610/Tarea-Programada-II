@@ -3,6 +3,7 @@
 #include <string>
 #include <sstream>
 #include "persona.h" 
+#include "arbol.h"
 
 using namespace std; 
 
@@ -30,8 +31,10 @@ int main(){
             email = ""; 
 
             stream >> id >> nombre >> apellido >> email >> tipo >> supervisor; 
-            Persona * persona = new Persona(id, nombre, apellido,email, tipo, supervisor);  
-            persona -> obtenerDatos(); 
+            Persona * persona = new Persona(id, nombre, apellido,email, tipo, supervisor); 
+            Persona actual = Persona(id, nombre, apellido,email, tipo, supervisor); 
+            //persona ->obtenerDatos(); 
+           // arbol->agregarNodo(persona->obtenerIDempleado(), actual, persona->obtenerIdSupervisor()); 
 
 
             if(nombre.length()==0){
@@ -43,6 +46,8 @@ int main(){
             cerr<< exception << endl; 
         }
     } 
+    //std::cout<< *arbol; 
+    delete arbol; 
 
     ifs.close(); 
 
