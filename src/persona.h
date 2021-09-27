@@ -15,11 +15,7 @@ class Persona{
 
     public: 
     Persona();
-    Persona(int, std::string, std::string, std::string, int, int);
-    virtual std::string obtenerNombre();  
-    virtual void obtenerDatos();
-    virtual int obtenerIdSupervisor(); 
-    virtual int obtenerIDempleado();  
+    virtual void asigneDatos(int, std::string, std::string, std::string, int, int);
     friend std::ostream& operator << (std::ostream &o, const Persona &persona); 
 
 

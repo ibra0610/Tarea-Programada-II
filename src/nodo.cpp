@@ -7,13 +7,13 @@ Nodo::Nodo(int _id, Persona _persona){
 } 
 
 Nodo::~Nodo(){
-    std::clog<<"Borrando nodo " << this->id << std::endl; 
+    //std::clog<<"Borrando nodo " << this->id << std::endl; 
 
     for(Nodo* hijo : this->hijos){
         delete hijo; 
     } 
 
-    std::clog << "Se termina de borrar nodo " << this-> id << std:: endl; 
+   // std::clog << "Se termina de borrar nodo " << this-> id << std:: endl; 
 } 
 
 void Nodo::agregarHijo(Nodo *hijo){
@@ -24,7 +24,7 @@ std::ostream& operator << (std::ostream &o, const Nodo &nodo){
     o<< "Nodo: "; 
     o<< nodo.id; 
     o<< ". Persona: "; 
-    o<< nodo.id;  
+    o<< nodo.persona;  
     o<< std::endl; 
 
     for(Nodo *nodoHijo: nodo.hijos){

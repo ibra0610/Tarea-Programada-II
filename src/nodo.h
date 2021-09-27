@@ -1,6 +1,7 @@
 #ifndef NODO_H 
 #define NODO_H 
 
+#include <iostream>
 #include <vector> 
 #include "persona.h" 
 
@@ -14,8 +15,8 @@ class Nodo{
     ~Nodo(); 
 
     void agregarHijo(Nodo *hijo); 
-    friend std::ostream& operator << (std::ostream &o, const Nodo &nodo); 
 
+    friend std::ostream& operator << (std::ostream &o, const Nodo &nodo); 
     
 }; 
 

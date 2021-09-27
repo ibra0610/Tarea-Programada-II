@@ -4,6 +4,7 @@
 #include "persona.h"
 #include "nodo.h"
 #include <map> 
+#include <iostream>
 
 class Arbol{
 
@@ -11,11 +12,13 @@ class Arbol{
     std::map<int, Nodo *> elementos; 
 
     public: 
-    Arbol(int id, Persona persona); 
+    Arbol(); 
     ~Arbol(); 
     void agregarNodo(int id, Persona persona, int idPadre); 
 
-    friend std::ostream& operator << (std::ostream &o, const Arbol &arbol); 
+    friend std::ostream& operator << (std::ostream &o, const Arbol &arbol);
+    friend std::istream& operator >> (std::istream &i, Arbol &arbol); 
+     
 }; 
 
 #endif 
