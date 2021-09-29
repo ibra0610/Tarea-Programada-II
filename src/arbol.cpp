@@ -5,7 +5,6 @@
 #include <string>
 #include <sstream>
 
-
 Arbol::Arbol(){
     this->raiz = nullptr; 
 
@@ -31,6 +30,10 @@ void Arbol::agregarNodo(int id, Persona persona, int idPadre){
 
 } 
 
+void Arbol::pruebaArb(){
+    elementos.at(250)->prueba();
+}
+
 std::ostream& operator << (std::ostream &o, const Arbol &arbol){
     Nodo* raiz = arbol.raiz; 
     o << *(raiz); 
@@ -55,10 +58,10 @@ std::istream& operator >> (std::istream &i, Arbol &arbol){
         std::istringstream stream (hilera); 
         stream >> id >> nombre >> apellido >> email >> tipo >> supervisor; 
         Persona persona = Persona (); 
-        persona.asigneDatos(id, nombre, apellido, email, tipo, supervisor); 
+        persona.asigneDatos(id, nombre, apellido, email, tipo, supervisor);
 
         arbol.agregarNodo(id, persona, supervisor); 
-        std::clog<< "Agregando nodo: " << id << " , "<< persona << " , " << supervisor << std::endl; //ESTO ES UNA PRUEBA, RECUERDE ELIMINARLO
+        //std::clog<< "Agregando nodo: " << id << " , "<< persona << " , " << supervisor << std::endl; //ESTO ES UNA PRUEBA, RECUERDE ELIMINARLO
 
     }
     return i;

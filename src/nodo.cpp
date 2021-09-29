@@ -16,8 +16,13 @@ Nodo::~Nodo(){
    // std::clog << "Se termina de borrar nodo " << this-> id << std:: endl; 
 } 
 
+
 void Nodo::agregarHijo(Nodo *hijo){
     this->hijos.push_back(hijo); 
+}
+
+void Nodo::prueba(){
+    std::cout<<persona.deNombre();
 }
 
 std::ostream& operator << (std::ostream &o, const Nodo &nodo){

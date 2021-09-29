@@ -15,7 +15,8 @@ class Persona{
 
     public: 
     Persona();
-    virtual void asigneDatos(int, std::string, std::string, std::string, int, int);
+    void asigneDatos(int, std::string, std::string, std::string, int, int);
+    std::string deNombre();
     friend std::ostream& operator << (std::ostream &o, const Persona &persona); 
 
 

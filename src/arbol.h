@@ -15,7 +15,7 @@ class Arbol{
     Arbol(); 
     ~Arbol(); 
     void agregarNodo(int id, Persona persona, int idPadre); 
-
+    void pruebaArb();
     friend std::ostream& operator << (std::ostream &o, const Arbol &arbol);
     friend std::istream& operator >> (std::istream &i, Arbol &arbol); 
      

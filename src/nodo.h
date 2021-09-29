@@ -15,7 +15,7 @@ class Nodo{
     ~Nodo(); 
 
     void agregarHijo(Nodo *hijo); 
-
+    void prueba();
     friend std::ostream& operator << (std::ostream &o, const Nodo &nodo); 
     
 }; 

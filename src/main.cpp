@@ -20,7 +20,7 @@ int main(){
 
     ifs >> *arbol; 
 
-    std::cout <<arbol; 
+    arbol->pruebaArb();
 
     delete arbol;
 
