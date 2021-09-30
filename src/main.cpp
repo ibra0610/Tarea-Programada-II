@@ -4,25 +4,45 @@
 #include <sstream>
 #include "persona.h" 
 #include "arbol.h"
+#include "pago.h"
 
+using namespace std;
 
 int main(){
 
     
 
-    std::ifstream ifs("Personas.txt", std::ifstream::in); 
+    ifstream ifs("Personas.txt", ifstream::in); 
 
     if(!ifs.is_open()){
-        std::cerr << "Error leyendo archivo Personas.txt" << std::endl;
+        cerr << "Error leyendo archivo Personas.txt" << endl;
     }
 
     Arbol *arbol = new Arbol(); 
+    Pago *planilla = new Pago();
 
     ifs >> *arbol; 
 
-    arbol->pruebaArb();
+    planilla->calcule_y_asignePago(arbol);
 
+    ofstream archivo; 
+
+    archivo.open("Reporte.csv", ios::out); 
+
+    if(archivo.fail()){
+        cout<< "No se pudo crear el archivo Reporte.csv"; 
+    } 
+
+    archivo << *arbol << ","<<endl; 
+    archivo<< "Subtotal: " <<","<< planilla->deSubtotal() << ","<<endl; 
+    archivo<< "Total de impuestos: " << "," << planilla->deTotalImpuestos() << ","  << endl; 
+    archivo<< "Total: " << "," << planilla->deTotal()<< "," << endl; 
+
+    archivo.close();
+
+    
     delete arbol;
+    delete planilla; 
 
     return 0; 
 

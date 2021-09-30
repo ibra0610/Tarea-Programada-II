@@ -30,8 +30,17 @@ void Arbol::agregarNodo(int id, Persona persona, int idPadre){
 
 } 
 
-void Arbol::pruebaArb(){
-    elementos.at(250)->prueba();
+
+void Arbol::asignePago(int _id, float _pago){
+    elementos.at(_id)->asignePago_a_Persona(_pago);
+}
+
+std::string Arbol::deNombre(int _id){
+    return elementos.at(_id)->deNombre();
+} 
+
+void Arbol::asigneNombreSupervisor(int id, std::string _nuevo_nombre){
+    elementos.at(id)->asigneNombreSup(_nuevo_nombre);
 }
 
 std::ostream& operator << (std::ostream &o, const Arbol &arbol){
@@ -59,9 +68,9 @@ std::istream& operator >> (std::istream &i, Arbol &arbol){
         stream >> id >> nombre >> apellido >> email >> tipo >> supervisor; 
         Persona persona = Persona (); 
         persona.asigneDatos(id, nombre, apellido, email, tipo, supervisor);
-
+     
         arbol.agregarNodo(id, persona, supervisor); 
-        //std::clog<< "Agregando nodo: " << id << " , "<< persona << " , " << supervisor << std::endl; //ESTO ES UNA PRUEBA, RECUERDE ELIMINARLO
+        
 
     }
     return i;

@@ -8,8 +8,10 @@ Persona::Persona(){
     this -> nombre = ""; 
     this -> apellido =""; 
     this -> email = ""; 
+    this -> nombre_supervisor ="";
     this ->tipo_empleado = 0; 
-    this -> id_supervisor =0; 
+    this -> id_supervisor =0;
+    this->pago_neto =0;  
 }
 
 void Persona::asigneDatos(int _id_empleado, std::string _nombre, std::string _apellido, std::string _email, int _tipo_empleado, int _id_supervisor){
@@ -21,23 +23,43 @@ void Persona::asigneDatos(int _id_empleado, std::string _nombre, std::string _ap
     this -> id_supervisor = _id_supervisor; 
 }
 
+void Persona::asignePago(float _pago_neto){
+    pago_neto = _pago_neto; 
+}
+
+void Persona::asigneNombreSupervisor(std::string _nombre_supervisor){
+    nombre_supervisor = _nombre_supervisor; 
+}
+
+
+std::ostream& operator << (std::ostream &o, const Persona &persona){
+    o<<persona.id_empleado; 
+    o<< ","; 
+    o<< persona.nombre;
+    o<< persona.apellido;
+    o<< ","; 
+    o<<persona.nombre_supervisor; 
+    o<<","; 
+    o<<persona.pago_neto; 
+
+    return o; 
+}
+
+//METODOS GETTERS 
+
 std::string Persona::deNombre(){
     return nombre; 
 }
-std::ostream& operator << (std::ostream &o, const Persona &persona){
-    o<<"ID de empleado: "; 
-    o<< persona.id_empleado; 
-    o<<" Nombre: "; 
-    o<< persona.nombre; 
-    o<<" Apellido: "; 
-    o<< persona.apellido; 
-    o<<" Email: "; 
-    o<< persona.email; 
-    o<< " Tipo de empleado: "; 
-    o<< persona.tipo_empleado; 
-    o<<" ID supervisor: "; 
-    o<< persona.id_supervisor; 
 
-    return o; 
+std::string Persona::deApellido(){
+    return apellido; 
 } 
+
+int Persona::deID_Empleado(){
+    return id_empleado; 
+} 
+
+float Persona::dePago(){
+    return pago_neto; 
+}
 

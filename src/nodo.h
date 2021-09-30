@@ -15,7 +15,9 @@ class Nodo{
     ~Nodo(); 
 
     void agregarHijo(Nodo *hijo); 
-    void prueba();
+    void asignePago_a_Persona(float);
+    void asigneNombreSup(std::string);
+    std::string deNombre(); 
     friend std::ostream& operator << (std::ostream &o, const Nodo &nodo); 
     
 }; 

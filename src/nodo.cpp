@@ -21,15 +21,20 @@ void Nodo::agregarHijo(Nodo *hijo){
     this->hijos.push_back(hijo); 
 }
 
-void Nodo::prueba(){
-    std::cout<<persona.deNombre();
+void Nodo::asignePago_a_Persona(float _nuevoPago){
+    persona.asignePago(_nuevoPago);
+}
+
+std::string Nodo::deNombre(){
+    return persona.deNombre();
+}
+
+void Nodo::asigneNombreSup(std::string _nombre_sup){
+    persona.asigneNombreSupervisor(_nombre_sup);
 }
 
 std::ostream& operator << (std::ostream &o, const Nodo &nodo){
-    o<< "Nodo: "; 
-    o<< nodo.id; 
-    o<< ". Persona: "; 
-    o<< nodo.persona;  
+    o<< nodo.persona; 
     o<< std::endl; 
 
     for(Nodo *nodoHijo: nodo.hijos){
