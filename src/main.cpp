@@ -5,6 +5,7 @@
 #include "persona.h" 
 #include "arbol.h"
 #include "pago.h"
+#include <iomanip>
 
 using namespace std;
 
@@ -33,10 +34,11 @@ int main(){
         cout<< "No se pudo crear el archivo Reporte.csv"; 
     } 
 
+    archivo<< "ID_Empleado" << "," << "Nombre completo" << "," << "Nombre completo del supervisor" << "," << "Monto neto a pagar" << "," << endl;
     archivo << *arbol << ","<<endl; 
-    archivo<< "Subtotal: " <<","<< planilla->deSubtotal() << ","<<endl; 
-    archivo<< "Total de impuestos: " << "," << planilla->deTotalImpuestos() << ","  << endl; 
-    archivo<< "Total: " << "," << planilla->deTotal()<< "," << endl; 
+    archivo<< "Subtotal: " <<","<< fixed << setw(11) << setprecision(6) << setfill(' ')<< planilla->deSubtotal() << ","<<endl; 
+    archivo<< "Total de impuestos: " << "," << fixed << setw(11) << setprecision(6) << setfill(' ') << planilla->deTotalImpuestos() << ","  << endl; 
+    archivo<< "Total: " << "," << fixed << setw(11) << setprecision(6) << setfill(' ')<< planilla->deTotal() << "," << endl; 
 
     archivo.close();
 

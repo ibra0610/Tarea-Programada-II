@@ -8,7 +8,7 @@ Persona::Persona(){
     this -> nombre = ""; 
     this -> apellido =""; 
     this -> email = ""; 
-    this -> nombre_supervisor ="";
+    this -> nombre_supervisor ="PRUEBA PRUEBA";
     this ->tipo_empleado = 0; 
     this -> id_supervisor =0;
     this->pago_neto =0;  
@@ -36,6 +36,7 @@ std::ostream& operator << (std::ostream &o, const Persona &persona){
     o<<persona.id_empleado; 
     o<< ","; 
     o<< persona.nombre;
+    o<< " ";
     o<< persona.apellido;
     o<< ","; 
     o<<persona.nombre_supervisor; 
