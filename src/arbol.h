@@ -19,6 +19,7 @@ class Arbol{
     std::string deNombre(int); 
     void asigneNombreSupervisor(int, std::string);
     int deIdSupervisor(int);
+    std::string deApellido(int);
     friend std::ostream& operator << (std::ostream &o, const Arbol &arbol);
     friend std::istream& operator >> (std::istream &i, Arbol &arbol); 
      

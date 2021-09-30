@@ -43,7 +43,7 @@ void Pago::calcule_y_asignePago(Arbol *arbol){
             if(arbol->deIdSupervisor(id_empleado_a_pagar)==0){
                 arbol->asigneNombreSupervisor(id_empleado_a_pagar, "SE PAGA A SI MISMO");
             }else{
-                arbol->asigneNombreSupervisor(id_empleado_a_pagar, arbol->deNombre(arbol->deIdSupervisor(id_empleado_a_pagar)));
+                arbol->asigneNombreSupervisor(id_empleado_a_pagar, arbol->deNombre(arbol->deIdSupervisor(id_empleado_a_pagar)) + " " + arbol->deApellido(arbol->deIdSupervisor(id_empleado_a_pagar)));
             }
             
         
@@ -75,7 +75,7 @@ void Pago::calcule_y_asignePago(Arbol *arbol){
             if(arbol->deIdSupervisor(id_empleado_a_pagar)==0){
                 arbol->asigneNombreSupervisor(id_empleado_a_pagar, "SE PAGA A SI MISMO");
             }else{
-                arbol->asigneNombreSupervisor(id_empleado_a_pagar, arbol->deNombre(arbol->deIdSupervisor(id_empleado_a_pagar)));
+                arbol->asigneNombreSupervisor(id_empleado_a_pagar, arbol->deNombre(arbol->deIdSupervisor(id_empleado_a_pagar)) + " " + arbol->deApellido(arbol->deIdSupervisor(id_empleado_a_pagar)));
             }
             
 

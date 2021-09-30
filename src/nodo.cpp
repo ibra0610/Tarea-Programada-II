@@ -29,6 +29,10 @@ std::string Nodo::deNombre(){
     return persona.deNombre();
 }
 
+std::string Nodo::deApellido(){
+    return persona.deApellido();
+}
+
 void Nodo::asigneNombreSup(std::string _nombre_sup){
     persona.asigneNombreSupervisor(_nombre_sup);
 }

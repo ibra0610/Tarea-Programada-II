@@ -39,6 +39,10 @@ std::string Arbol::deNombre(int _id){
     return elementos.at(_id)->deNombre();
 } 
 
+std::string Arbol::deApellido(int _id){
+    return elementos.at(_id)->deApellido();
+}
+
 void Arbol::asigneNombreSupervisor(int id, std::string _nuevo_nombre){
     elementos.at(id)->asigneNombreSup(_nuevo_nombre);
 }
