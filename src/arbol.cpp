@@ -43,6 +43,10 @@ void Arbol::asigneNombreSupervisor(int id, std::string _nuevo_nombre){
     elementos.at(id)->asigneNombreSup(_nuevo_nombre);
 }
 
+int Arbol::deIdSupervisor(int _id){
+    return elementos.at(_id)->deIDSup();
+}
+
 std::ostream& operator << (std::ostream &o, const Arbol &arbol){
     Nodo* raiz = arbol.raiz; 
     o << *(raiz); 

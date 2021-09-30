@@ -33,6 +33,10 @@ void Nodo::asigneNombreSup(std::string _nombre_sup){
     persona.asigneNombreSupervisor(_nombre_sup);
 }
 
+int Nodo::deIDSup(){
+    return persona.deID_supervisor();
+}
+
 std::ostream& operator << (std::ostream &o, const Nodo &nodo){
     o<< nodo.persona; 
     o<< std::endl; 

@@ -8,7 +8,7 @@ Persona::Persona(){
     this -> nombre = ""; 
     this -> apellido =""; 
     this -> email = ""; 
-    this -> nombre_supervisor ="PRUEBA PRUEBA";
+    this -> nombre_supervisor ="";
     this ->tipo_empleado = 0; 
     this -> id_supervisor =0;
     this->pago_neto =0;  
@@ -64,3 +64,6 @@ float Persona::dePago(){
     return pago_neto; 
 }
 
+int Persona::deID_supervisor(){
+    return id_supervisor;
+}

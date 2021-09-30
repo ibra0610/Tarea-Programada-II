@@ -40,6 +40,12 @@ void Pago::calcule_y_asignePago(Arbol *arbol){
             subtotal+=monto_a_pagar; 
 
             arbol->asignePago(id_empleado_a_pagar, monto_a_pagar);
+            if(arbol->deIdSupervisor(id_empleado_a_pagar)==0){
+                arbol->asigneNombreSupervisor(id_empleado_a_pagar, "SE PAGA A SI MISMO");
+            }else{
+                arbol->asigneNombreSupervisor(id_empleado_a_pagar, arbol->deNombre(arbol->deIdSupervisor(id_empleado_a_pagar)));
+            }
+            
         
     }
     nomina.close(); 
@@ -66,6 +72,12 @@ void Pago::calcule_y_asignePago(Arbol *arbol){
             subtotal+=monto_a_pagar; 
 
             arbol->asignePago(id_empleado_a_pagar, monto_a_pagar);
+            if(arbol->deIdSupervisor(id_empleado_a_pagar)==0){
+                arbol->asigneNombreSupervisor(id_empleado_a_pagar, "SE PAGA A SI MISMO");
+            }else{
+                arbol->asigneNombreSupervisor(id_empleado_a_pagar, arbol->deNombre(arbol->deIdSupervisor(id_empleado_a_pagar)));
+            }
+            
 
     }
     horas.close();

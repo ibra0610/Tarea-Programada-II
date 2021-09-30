@@ -21,6 +21,7 @@ class Persona{
     void asignePago(float);
     void asigneNombreSupervisor(std::string); 
     int deID_Empleado();
+    int deID_supervisor();
     float dePago();
     std::string deNombre();
     std::string deApellido(); 

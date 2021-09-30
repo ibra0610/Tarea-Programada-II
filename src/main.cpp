@@ -2,10 +2,11 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <iomanip>
 #include "persona.h" 
 #include "arbol.h"
 #include "pago.h"
-#include <iomanip>
+
 
 using namespace std;
 
